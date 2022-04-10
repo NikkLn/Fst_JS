@@ -37,16 +37,6 @@ const personalMovieDB = {
 
     rememberMyFilms();
 
-    if (personalMovieDB.count < 10) {
-        alert('Просмотрено довольно мало фильмов!');
-    } else if (personalMovieDB.count > 10 && personalMovieDB.count < 30) {
-        alert('Вы классический зритель!');
-    } else if (personalMovieDB.count > 30) {
-        alert('Вы киноман!');
-    } else {
-        alert('Произошла ошибка');
-    }
-
     function detectPersonalLevel() {
         if (personalMovieDB.count < 10) {
             alert('Просмотрено довольно мало фильмов!');
@@ -61,7 +51,22 @@ const personalMovieDB = {
 
     detectPersonalLevel();
 
-console.log(personalMovieDB);
+function schowMyDB() {
+    if (personalMovieDB.privat == false) {
+        console.log(personalMovieDB);
+    }
+}
+
+schowMyDB();
+
+function writeYourGenres() {
+    for (let i = 1; i<4; i++) {
+        personalMovieDB.genres[i] = prompt(`Ваш любимый жанр под номером ${i}`, '');
+    }
+    console.log(personalMovieDB.genres);
+}
+
+writeYourGenres();
 
 const logg = "Hello world";
 console.log(logg.slice(0, 5));
